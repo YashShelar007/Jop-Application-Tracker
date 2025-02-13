@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "expo-font": "^13.0.3",
+    "react-native-dotenv": "^3.4.11"
+  }
+}
