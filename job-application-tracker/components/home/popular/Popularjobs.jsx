@@ -17,6 +17,13 @@ const Popularjobs = () => {
     { id: "2", title: "Full Stack Engineer", company: "Meta" },
   ];
 
+  const handleJobPress = (job) => {
+    router.push({
+      pathname: "/job-details",
+      params: { title: job.title, company: job.company },
+    });
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -30,7 +37,7 @@ const Popularjobs = () => {
         data={recentJobs}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <TouchableOpacity style={styles.jobCard}>
+          <TouchableOpacity style={styles.jobCard} onPress={() => handleJobPress(item)}>
             <Text style={styles.jobTitle}>{item.title}</Text>
             <Text style={styles.jobCompany}>{item.company}</Text>
           </TouchableOpacity>
